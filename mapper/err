@@ -1,0 +1,188 @@
+1
+-0.00999841 0.0021245 odom_ch
+1.55142 0.187013 last_pose
+2
+3
+0xy_cels X
+0xy_cels Y
+0xy_cels X
+0.000243362 0.0107527 xy_error
+9 points
+2.85305 yaw
+1
+-0.0315746 0.00705448 odom_ch
+1.51984 0.194067 last_pose
+2
+3
+0xy_cels X
+0xy_cels Y
+0xy_cels X
+0.031818 0.0178071 xy_error
+9 points
+2.85305 yaw
+1
+-0.0106123 0.00169571 odom_ch
+1.50923 0.195763 last_pose
+2
+3
+0xy_cels X
+0xy_cels Y
+0xy_cels X
+0.0424303 0.0195029 xy_error
+9 points
+2.91736 yaw
+1
+-0.0180917 0.00300734 odom_ch
+1.49114 0.19877 last_pose
+2
+3
+0xy_cels X
+0xy_cels Y
+0xy_cels X
+0.060522 0.0225102 xy_error
+9 points
+2.92204 yaw
+1
+-0.0169369 0.00426445 odom_ch
+1.4742 0.203035 last_pose
+2
+3
+1xy_cels X
+0xy_cels Y
+0xy_cels X
+0.117459 0.0267746 xy_error
+9 points
+2.86138 yaw
+1
+-0.00540711 0.00119134 odom_ch
+1.46879 0.204226 last_pose
+2
+3
+2xy_cels X
+0xy_cels Y
+0xy_cels X
+0.202866 0.027966 xy_error
+9 points
+2.94548 yaw
+1
+-0.0124824 0.00162827 odom_ch
+1.45631 0.205854 last_pose
+2
+3
+4xy_cels X
+0xy_cels Y
+0xy_cels X
+0.375348 0.0295943 xy_error
+9 points
+2.97699 yaw
+1
+-0.0430941 0.00515473 odom_ch
+1.41322 0.211009 last_pose
+2
+3
+8xy_cels X
+0xy_cels Y
+0xy_cels X
+0.738443 0.034749 xy_error
+9 points
+2.97908 yaw
+1
+-0.0123421 0.00148461 odom_ch
+1.40087 0.212494 last_pose
+2
+3
+18xy_cels X
+0xy_cels Y
+0xy_cels X
+1.47078 0.0362336 xy_error
+9 points
+2.95382 yaw
+1
+-0.0324446 0.00461069 odom_ch
+1.36843 0.217105 last_pose
+2
+3
+35xy_cels X
+1xy_cels Y
+1xy_cels X
+2.90323 0.000844291 xy_error
+9 points
+2.9533 yaw
+1
+-0.034454 0.004884 odom_ch
+1.33398 0.221989 last_pose
+2
+3
+71xy_cels X
+0xy_cels Y
+0xy_cels X
+5.77768 0.00572829 xy_error
+9 points
+2.95434 yaw
+1
+-0.0342933 0.00493065 odom_ch
+1.29968 0.226919 last_pose
+2
+3
+143xy_cels X
+0xy_cels Y
+0xy_cels X
+11.532 0.0106589 xy_error
+9 points
+2.9533 yaw
+1
+-0.0356754 0.00488453 odom_ch
+1.26401 0.231804 last_pose
+2
+3
+287xy_cels X
+0xy_cels Y
+0xy_cels X
+23.0477 0.0155435 xy_error
+9 points
+2.95408 yaw
+1
+-0.0273344 0.00377977 odom_ch
+1.23667 0.235583 last_pose
+2
+3
+575xy_cels X
+0xy_cels Y
+0xy_cels X
+46.075 0.0193232 xy_error
+9 points
+2.95564 yaw
+1
+-0.036051 0.00530102 odom_ch
+1.20062 0.240884 last_pose
+2
+3
+1150xy_cels X
+0xy_cels Y
+0xy_cels X
+92.111 0.0246243 xy_error
+9 points
+2.95564 yaw
+1
+-0.0258974 0.00369373 odom_ch
+1.17472 0.244578 last_pose
+2
+3
+2302xy_cels X
+0xy_cels Y
+0xy_cels X
+184.217 0.028318 xy_error
+9 points
+2.95616 yaw
+1
+-0.0416081 0.00626553 odom_ch
+1.13312 0.250844 last_pose
+2
+3
+4604xy_cels X
+0xy_cels Y
+0xy_cels X
+368.419 0.0345835 xy_error
+9 points
+2.95356 yaw
+Segmentation fault (core dumped)

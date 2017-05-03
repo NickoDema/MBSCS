@@ -6,8 +6,8 @@
  *              Department of Computer Science and Control Systems
  */
 
-#ifndef NAV_STEP_
-#define NAV_STEP_
+#ifndef VIZ_
+#define VIZ_
 
 #include <ros/ros.h>
 #include <tf/tf.h>
@@ -26,11 +26,19 @@ class Visualizer
     protected:
         ros::NodeHandle nh_;
 
+        enum m_type
+        {
+            point  = 0x01,
+            line_s = 0x02,      //line strips
+            lise_l = 0x04,      //line list
+            // ++++
+        };
+
         ros::Publisher marker_pub;
 
         geometry_msgs::Point pnt;
 
-        bool set_marker (visualization_msgs::Marker &);
+        bool set_marker (visualization_msgs::Marker &,m_type);
 };
 
-#endif  /*NAV_STEP_*/
+#endif  /*VIZ_*/
