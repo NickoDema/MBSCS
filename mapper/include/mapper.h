@@ -1,4 +1,4 @@
-/* visualizer.h
+/* mapper.h
  *
  *  Created on: 19.04.2017
  *       Email: Nicko_Dema@protonmail.com
@@ -52,6 +52,24 @@ class Mapper
             int8_t map_[CELL_N][CELL_N];     //MAP
             void move(int, char);
         } map_keeper;
+        class Map_builder
+        {
+            protected:
+            struct Point       
+ 		    {
+     		    double x, y;
+     		    Point *Next,*Prev;
+ 		    };
+            Point *Head, *Tail;
+            double max_dist;
+            public:
+            Map_builder(double, double);
+            ~Map_builder();
+            void add(double, double);
+            void div_by_two();
+            void to_map(double,double,double,int8_t [CELL_N][CELL_N]);
+            double get_dist(Point *, Point *);
+        };
 
 
 };

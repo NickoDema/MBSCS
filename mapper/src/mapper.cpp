@@ -164,8 +164,22 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 	for (int i=0;i<distances_msg->points.size(); i++)
 	{
-		//АТЭНШН, если ошибка слишком велика, то значения улетают за пределы массива
+		Map_builder builder(distances_msg->points[i].x, distances_msg->points[i].y);
+		std::cout << "Create bulder" << std::endl;	//--
+		builder.div_by_two();
+		std::cout << "div" << std::endl;	//--
+		builder.to_map(yaw_angle, map_keeper.x_error, map_keeper.y_error, map_keeper.map_);
+		std::cout << "to map" << std::endl;	//--
+
+
+
+
+/*		//АТЭНШН, если ошибка слишком велика, то значения улетают за пределы массива
 		if (sqrt(pow(distances_msg->points[i].x, 2) + pow(distances_msg->points[i].y, 2)) > 0.57) continue;
+		///////////////////////////////////////////////////////////
+		
+
+		///////////////////////////////////////////////////////////
 
 		double x = distances_msg->points[i].x + map_keeper.x_error;
 		double y = distances_msg->points[i].y + map_keeper.y_error;
@@ -184,11 +198,8 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 		if (xR < 0) xR = 0;
 		if (yR < 0) yR = 0;
 
-		//ПЕРЕВОД В КООРДИНАТЫ КАРТЫ
-		//std::cout << xR << " " << yR << " point0 after aprox" << std::endl;	//-------
-
 		//seg fault here if .. (отрицательные значения еблан)
-		map_keeper.map_[(int)yR][(int)xR] = 100;
+		map_keeper.map_[(int)yR][(int)xR] = 100;*/
 	}
 
 	nav_msgs::OccupancyGrid map_msg;

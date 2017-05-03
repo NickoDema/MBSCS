@@ -102,7 +102,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(${PROJECT_NAME} src/mapper.cpp
-    src/main.cpp src/map_keeper.cpp)
+    src/main.cpp src/map_keeper.cpp src/map_builder.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
