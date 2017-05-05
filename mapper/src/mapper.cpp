@@ -31,7 +31,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	std::cout << "1" << std::endl;	//------------------------------------
 	//wait for single message from distance sensors
 	sensor_msgs::PointCloudConstPtr distances_msg = 
-	ros::topic::waitForMessage<sensor_msgs::PointCloud>("/distance_sensors");
+	ros::topic::waitForMessage<sensor_msgs::PointCloud>("/distance_sensors_filtered");
 	
 	odom_ch.x = odom_msg.pose.pose.position.x - last_pose.position.x;
 	odom_ch.y = odom_msg.pose.pose.position.y - last_pose.position.y;
@@ -64,7 +64,6 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 	std::cout << "3" << std::endl;	//------------------------------------
 	//Определение смещения робота в клетках карты для оси Х
-	//АТЭНШН, при малых перемещениях (скорости) смещений происходить не будет
 	err = abs(modf((odom_ch.x + map_keeper.x_error)/CELL_H, &xy_cells_n));
 	std::cout << xy_cells_n << " xy_cells_n1" << std::endl;	//--------
 	xy_cells_n = abs(xy_cells_n)/2;
@@ -164,42 +163,13 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 	for (int i=0;i<distances_msg->points.size(); i++)
 	{
+		if (distances_msg->points[i].x < -0.4) continue;
 		Map_builder builder(distances_msg->points[i].x, distances_msg->points[i].y);
 		std::cout << "Create bulder" << std::endl;	//--
 		builder.div_by_two();
 		std::cout << "div" << std::endl;	//--
 		builder.to_map(yaw_angle, map_keeper.x_error, map_keeper.y_error, map_keeper.map_);
 		std::cout << "to map" << std::endl;	//--
-
-
-
-
-/*		//АТЭНШН, если ошибка слишком велика, то значения улетают за пределы массива
-		if (sqrt(pow(distances_msg->points[i].x, 2) + pow(distances_msg->points[i].y, 2)) > 0.57) continue;
-		///////////////////////////////////////////////////////////
-		
-
-		///////////////////////////////////////////////////////////
-
-		double x = distances_msg->points[i].x + map_keeper.x_error;
-		double y = distances_msg->points[i].y + map_keeper.y_error;
-		//std::cout << x << " " << y << " point wit err" << std::endl;	//---------
-
-		double xR = x*cos(yaw_angle) - y*sin(yaw_angle);
-		double yR = y*cos(yaw_angle) + x*sin(yaw_angle);
-
-		//std::cout << xR << " " << yR << " point0 after rotate" << std::endl;	//------
-
-		if (xR > -0.02 && xR < 0.02) xR = R_POSE;
-		else xR = R_POSE+(xR+CELL_H)/CELL;
-		if (yR > -0.02 && yR < 0.02) yR = R_POSE;
-		else yR = R_POSE+(yR+CELL_H)/CELL;
-
-		if (xR < 0) xR = 0;
-		if (yR < 0) yR = 0;
-
-		//seg fault here if .. (отрицательные значения еблан)
-		map_keeper.map_[(int)yR][(int)xR] = 100;*/
 	}
 
 	nav_msgs::OccupancyGrid map_msg;

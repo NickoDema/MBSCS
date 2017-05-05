@@ -50,6 +50,8 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 	std::cout << "in to_map" << std::endl;	//--
 	while (temp != NULL)
 	{
+		double dist;
+
 		temp->x = temp->x + x_err;
 		temp->y = temp->y + y_err;
 
@@ -66,9 +68,9 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 		if (xR < 0) xR = 0;
 		if (yR < 0) yR = 0;
 
+		dist = sqrt(pow(temp->x, 2) + pow(temp->y, 2));
 		if (temp != Tail) map_[(int)yR][(int)xR] = 0;
-		else if (sqrt(pow(temp->x, 2) + pow(temp->y, 2)) < 0.58) 
-		map_[(int)yR][(int)xR] = 100;
+		else if (dist < 0.57) map_[(int)yR][(int)xR] = 100;
 
 		temp = temp->Next;
 		std::cout << " +";	//--

@@ -10,7 +10,7 @@
 
 Visualizer::Visualizer(std::string node_name): nh_("~")
 {
-    marker_pub = nh_.advertise<visualization_msgs::Marker>("/visualization", 3,true);
+    marker_pub = nh_.advertise<visualization_msgs::Marker>("/visualization", 1,true);
 }
 
 bool Visualizer::set_marker (visualization_msgs::Marker &marker, m_type type)
@@ -43,54 +43,30 @@ bool Visualizer::set_marker (visualization_msgs::Marker &marker, m_type type)
 void Visualizer::spin()
 {
     int i = 0;
-    ros::Rate R(5);
+    ros::Rate R(2);
 	while (marker_pub.getNumSubscribers() < 1 && nh_.ok()) 
 	    {
 	        ROS_WARN_ONCE("Please create a subscriber to the marker");
 	        R.sleep();
 	    }
-	visualization_msgs::Marker contour;
-	set_marker(contour, line_s);
-	pnt.x = 0.185;
-	pnt.y = 0.185;
-	pnt.z = 0;
-	contour.points.push_back(pnt);
-	pnt.x = pnt.x - 0.37;
-	contour.points.push_back(pnt);
-	pnt.y = pnt.y - 0.37;
-	contour.points.push_back(pnt);
-	pnt.x = pnt.x + 0.37;
-	contour.points.push_back(pnt);
-	pnt.y = pnt.y + 0.37;
-	contour.points.push_back(pnt);
-	marker_pub.publish(contour);
 
    while(nh_.ok())
     {
-/*      while (marker_pub.getNumSubscribers() < 1 && nh_.ok()) 
-	    {
-	        ROS_WARN_ONCE("Please create a subscriber to the marker");
-	        R.sleep();
-	    }
+		visualization_msgs::Marker contour;
 		set_marker(contour, line_s);
-
-        visualization_msgs::Marker contour;
-        set_marker(contour, line_s);
-        pnt.x = 0.61*sin(i*M_PI/180);
-	    pnt.y = 0.61*cos(i*M_PI/180);
-	    pnt.z = 0;
-	    marker.points.push_back(pnt);
-
-	    std::cout << "marker x: " << marker.points[0].x << std::endl;
-        std::cout << "pnt x: " << pnt.x << std::endl;
-
-        marker_pub.publish(marker);
-
-        ros::spinOnce();
-
-	    i++;
-	    i==360 ? i = 0 :  
-        */
+		pnt.x = 0.185;
+		pnt.y = 0.185;
+		pnt.z = 0;
+		contour.points.push_back(pnt);
+		pnt.x = pnt.x - 0.37;
+		contour.points.push_back(pnt);
+		pnt.y = pnt.y - 0.37;
+		contour.points.push_back(pnt);
+		pnt.x = pnt.x + 0.37;
+		contour.points.push_back(pnt);
+		pnt.y = pnt.y + 0.37;
+		contour.points.push_back(pnt);
+		marker_pub.publish(contour);
 		ros::spinOnce();
         R.sleep();
     }

@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mapper)
+project(sd_filter)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  geometry_msgs
   sensor_msgs
-  nav_msgs
   tf
 )
 
@@ -16,16 +14,16 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-
 include_directories(
   ${catkin_INCLUDE_DIRS}
   src
   include
 )
 
-add_executable(${PROJECT_NAME} src/mapper.cpp
-    src/main.cpp src/map_keeper.cpp src/map_builder.cpp)
+add_executable(${PROJECT_NAME}_node src/sd_filter_node.cpp
+               src/sd_filter.cpp)
 
-target_link_libraries(${PROJECT_NAME}
-${catkin_LIBRARIES}
+target_link_libraries(${PROJECT_NAME}_node
+  ${catkin_LIBRARIES}
 )
+

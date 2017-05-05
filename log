@@ -1,0 +1,643 @@
+#03.05.2017
+#05.50pm
+1
+0 0 odom_ch
+3.31027 -0.0654161 last_pose
+2
+3
+0 xy_cells_n1
+0 xy_cells_n2
+0xy_cels X
+0 xy_cells_n1
+0 xy_cells_n2
+0xy_cels Y
+9 points
+0.100934 yaw
+add 0 0
+add 0.61 0
+Create bulder
+get first dist 0.61
+set temp = Head0x86b0a0
+0
+
+0.305
+set temp = Head0x86b0a0
+0
+1
+
+0.1525
+set temp = Head0x86b0a0
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x86b0a0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.467339 0.392039
+Create bulder
+get first dist 0.61
+set temp = Head0x8685d0
+0
+
+0.305
+set temp = Head0x8685d0
+0
+1
+
+0.1525
+set temp = Head0x8685d0
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x8685d0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.0595033 0.336941
+Create bulder
+get first dist 0.342155
+set temp = Head0x86ac80
+0
+
+0.171077
+set temp = Head0x86ac80
+0
+1
+
+0.0855387
+set temp = Head0x86ac80
+0
+1
+2
+3
+
+0.0427694
+set temp = Head0x86ac80
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0213847
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.216409 0.375174
+Create bulder
+get first dist 0.433115
+set temp = Head0x86b0a0
+0
+
+0.216558
+set temp = Head0x86b0a0
+0
+1
+
+0.108279
+set temp = Head0x86b0a0
+0
+1
+2
+3
+
+0.0541394
+set temp = Head0x86b0a0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0270697
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.573103 0.208934
+Create bulder
+get first dist 0.61
+set temp = Head0x8685d0
+0
+
+0.305
+set temp = Head0x8685d0
+0
+1
+
+0.1525
+set temp = Head0x8685d0
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x8685d0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.57335 -0.208255
+Create bulder
+get first dist 0.61
+set temp = Head0x86ac80
+0
+
+0.305
+set temp = Head0x86ac80
+0
+1
+
+0.1525
+set temp = Head0x86ac80
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x86ac80
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.219298 -0.379143
+Create bulder
+get first dist 0.437996
+set temp = Head0x86b0a0
+0
+
+0.218998
+set temp = Head0x86b0a0
+0
+1
+
+0.109499
+set temp = Head0x86b0a0
+0
+1
+2
+3
+
+0.0547495
+set temp = Head0x86b0a0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0273748
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.0791154 -0.451117
+Create bulder
+get first dist 0.458002
+set temp = Head0x8685d0
+0
+
+0.229001
+set temp = Head0x8685d0
+0
+1
+
+0.114501
+set temp = Head0x8685d0
+0
+1
+2
+3
+
+0.0572503
+set temp = Head0x8685d0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0286252
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.370658 -0.311685
+Create bulder
+get first dist 0.484288
+set temp = Head0x86ac80
+0
+
+0.242144
+set temp = Head0x86ac80
+0
+1
+
+0.121072
+set temp = Head0x86ac80
+0
+1
+2
+3
+
+0.060536
+set temp = Head0x86ac80
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.030268
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+1
+0 0 odom_ch
+3.31027 -0.0654161 last_pose
+2
+^C3
+0 xy_cells_n1
+0 xy_cells_n2
+0xy_cels X
+0 xy_cells_n1
+0 xy_cells_n2
+0xy_cels Y
+9 points
+0.100934 yaw
+add 0 0
+add 0.61 0
+Create bulder
+get first dist 0.61
+set temp = Head0x867da0
+0
+
+0.305
+set temp = Head0x867da0
+0
+1
+
+0.1525
+set temp = Head0x867da0
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x867da0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.467339 0.392039
+Create bulder
+get first dist 0.61
+set temp = Head0x86a390
+0
+
+0.305
+set temp = Head0x86a390
+0
+1
+
+0.1525
+set temp = Head0x86a390
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x86a390
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.0593301 0.33596
+Create bulder
+get first dist 0.341159
+set temp = Head0x861dd0
+0
+
+0.170579
+set temp = Head0x861dd0
+0
+1
+
+0.0852897
+set temp = Head0x861dd0
+0
+1
+2
+3
+
+0.0426449
+set temp = Head0x861dd0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0213224
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.216409 0.375174
+Create bulder
+get first dist 0.433115
+set temp = Head0x867da0
+0
+
+0.216558
+set temp = Head0x867da0
+0
+1
+
+0.108279
+set temp = Head0x867da0
+0
+1
+2
+3
+
+0.0541394
+set temp = Head0x867da0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0270697
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.573103 0.208934
+Create bulder
+get first dist 0.61
+set temp = Head0x86a390
+0
+
+0.305
+set temp = Head0x86a390
+0
+1
+
+0.1525
+set temp = Head0x86a390
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x86a390
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.57335 -0.208255
+Create bulder
+get first dist 0.61
+set temp = Head0x861dd0
+0
+
+0.305
+set temp = Head0x861dd0
+0
+1
+
+0.1525
+set temp = Head0x861dd0
+0
+1
+2
+3
+
+0.07625
+set temp = Head0x861dd0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.038125
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add -0.222789 -0.385178
+Create bulder
+get first dist 0.444969
+set temp = Head0x867da0
+0
+
+0.222484
+set temp = Head0x867da0
+0
+1
+
+0.111242
+set temp = Head0x867da0
+0
+1
+2
+3
+
+0.0556211
+set temp = Head0x867da0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0278105
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.0798324 -0.455205
+Create bulder
+get first dist 0.462153
+set temp = Head0x86a390
+0
+
+0.231076
+set temp = Head0x86a390
+0
+1
+
+0.115538
+set temp = Head0x86a390
+0
+1
+2
+3
+
+0.0577691
+set temp = Head0x86a390
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.0288845
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+add 0 0
+add 0.370658 -0.311685
+Create bulder
+get first dist 0.484288
+set temp = Head0x861dd0
+0
+
+0.242144
+set temp = Head0x861dd0
+0
+1
+
+0.121072
+set temp = Head0x861dd0
+0
+1
+2
+3
+
+0.060536
+set temp = Head0x861dd0
+0
+1
+2
+3
+4
+5
+6
+7
+
+0.030268
+div
+in to_map
+ + + + + + + + + + + + + + + + + +to map
+(arg: 4) ^C
+ram@eva:~$ 
+
