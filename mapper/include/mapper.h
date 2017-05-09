@@ -20,8 +20,8 @@
 
 #include <cmath>
 
-#define CELL 0.04       //Cell boundary size
-#define CELL_H 0.02
+#define CELL 0.02       //Cell boundary size
+#define CELL_H 0.01
 #define CELL_N 51       //Maps width and height
 #define R_POSE 25       //Robot pose on map_
 

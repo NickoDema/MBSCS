@@ -28,7 +28,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 		double y = 0;
 	};
 	static ch odom_ch;
-	std::cout << "1" << std::endl;	//------------------------------------
+	//std::cout << "1" << std::endl;	//------------------------------------
 	//wait for single message from distance sensors
 	sensor_msgs::PointCloudConstPtr distances_msg = 
 	ros::topic::waitForMessage<sensor_msgs::PointCloud>("/distance_sensors_filtered");
@@ -38,10 +38,10 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	last_pose.position.x = odom_msg.pose.pose.position.x;
 	last_pose.position.y = odom_msg.pose.pose.position.y;
 
-	std::cout << odom_ch.x << " " << odom_ch.y << " odom_ch" << std::endl;	//--
-	std::cout << last_pose.position.x << " " << last_pose.position.y << " last_pose" << std::endl;	//--
+	//std::cout << odom_ch.x << " " << odom_ch.y << " odom_ch" << std::endl;	//--
+	//std::cout << last_pose.position.x << " " << last_pose.position.y << " last_pose" << std::endl;	//--
 
-	std::cout << "2" << std::endl;	//--------------------------------------
+	//std::cout << "2" << std::endl;	//--------------------------------------
 
 	//update non-rotating frame for the map
 	tf::TransformListener listener;
@@ -65,9 +65,9 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	std::cout << "3" << std::endl;	//------------------------------------
 	//Определение смещения робота в клетках карты для оси Х
 	err = abs(modf((odom_ch.x + map_keeper.x_error)/CELL_H, &xy_cells_n));
-	std::cout << xy_cells_n << " xy_cells_n1" << std::endl;	//--------
+	//std::cout << xy_cells_n << " xy_cells_n1" << std::endl;	//--------
 	xy_cells_n = abs(xy_cells_n)/2;
-	std::cout << xy_cells_n << " xy_cells_n2" << std::endl;	//--------
+	//std::cout << xy_cells_n << " xy_cells_n2" << std::endl;	//--------
 
 	if ((xy_cells_n - (long)xy_cells_n) > 0.5) {
 		xy_cells_n = (long)xy_cells_n + 1;
@@ -75,7 +75,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	else {
 		xy_cells_n = (long)xy_cells_n;
 	}
-	std::cout << xy_cells_n << "xy_cels X" << std::endl;	//--
+	//std::cout << xy_cells_n << "xy_cels X" << std::endl;	//--
 
 	//Смещение карты в соответствии с одометрией по оси Х
 	//здесь нужно менять x_error, а не odom_ch!!!!!!!!!!!!!!!!!!
@@ -83,7 +83,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	{
 		if (odom_ch.x > CELL_H - map_keeper.x_error)
 		{
-			std::cout << "call move with f" << std::endl;	//--------
+			//std::cout << "call move with f" << std::endl;	//--------
 			map_keeper.move((int)xy_cells_n, 'f');
 			map_keeper.x_error = odom_ch.x - (xy_cells_n*CELL - map_keeper.x_error);
 		}
@@ -96,7 +96,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	{
 		if (abs(odom_ch.x) > CELL_H + map_keeper.x_error)
 		{
-			std::cout << "call move with b" << std::endl;	//--------
+			//std::cout << "call move with b" << std::endl;	//--------
 			map_keeper.move((int)xy_cells_n, 'b');
 			map_keeper.x_error = (xy_cells_n*CELL + map_keeper.x_error) - abs(odom_ch.x);
 		}
@@ -110,9 +110,9 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 	//Определение смещения робота в клетках карты для оси Y
 	err = abs(modf((odom_ch.y + map_keeper.y_error)/CELL_H, &xy_cells_n));
-	std::cout << xy_cells_n << " xy_cells_n1" << std::endl;	//--------
+	//std::cout << xy_cells_n << " xy_cells_n1" << std::endl;	//--------
 	xy_cells_n = abs(xy_cells_n)/2;
-	std::cout << xy_cells_n << " xy_cells_n2" << std::endl;	//--------
+	//std::cout << xy_cells_n << " xy_cells_n2" << std::endl;	//--------
 
 	if ((xy_cells_n - (long)xy_cells_n) > 0.5) {
 		xy_cells_n = (long)xy_cells_n + 1;
@@ -120,7 +120,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	else {
 		xy_cells_n = (long)xy_cells_n;
 	}
-	std::cout << xy_cells_n << "xy_cels Y" << std::endl;	//--
+	//std::cout << xy_cells_n << "xy_cels Y" << std::endl;	//--
 
 	//Смещение карты в соответствии с одометрией по оси Х
 	//здесь нужно менять x_error, а не odom_ch!!!!!!!!!!!!!!!!!!
@@ -128,7 +128,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	{
 		if (odom_ch.y > CELL_H - map_keeper.y_error)
 		{
-			std::cout << "call move with l" << std::endl;	//--------
+			//std::cout << "call move with l" << std::endl;	//--------
 			map_keeper.move((int)xy_cells_n, 'l');
 			map_keeper.y_error = odom_ch.y - (xy_cells_n*CELL - map_keeper.y_error);
 		}
@@ -141,7 +141,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	{
 		if (abs(odom_ch.y) > CELL_H + map_keeper.y_error)
 		{
-			std::cout << "call move with r" << std::endl;	//--------
+			//std::cout << "call move with r" << std::endl;	//--------
 			map_keeper.move((int)xy_cells_n, 'r');
 			map_keeper.y_error = (xy_cells_n*CELL + map_keeper.y_error) - abs(odom_ch.y);
 		}
@@ -158,18 +158,18 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 	tf::poseMsgToTF(odom_msg.pose.pose, pose_fyaw);
 	double yaw_angle = tf::getYaw(pose_fyaw.getRotation());
 
-	std::cout << distances_msg->points.size() << " points" << std::endl;	//--------
-	std::cout << yaw_angle << " yaw" << std::endl;	//--
+	//std::cout << distances_msg->points.size() << " points" << std::endl;	//--------
+	//std::cout << yaw_angle << " yaw" << std::endl;	//--
 
 	for (int i=0;i<distances_msg->points.size(); i++)
 	{
 		if (distances_msg->points[i].x < -0.4) continue;
 		Map_builder builder(distances_msg->points[i].x, distances_msg->points[i].y);
-		std::cout << "Create bulder" << std::endl;	//--
+		//std::cout << "Create bulder" << std::endl;	//--
 		builder.div_by_two();
-		std::cout << "div" << std::endl;	//--
+		//std::cout << "div" << std::endl;	//--
 		builder.to_map(yaw_angle, map_keeper.x_error, map_keeper.y_error, map_keeper.map_);
-		std::cout << "to map" << std::endl;	//--
+		//std::cout << "to map" << std::endl;	//--
 	}
 
 	nav_msgs::OccupancyGrid map_msg;
@@ -197,7 +197,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 void Mapper::spin()
 {
-    ros::Rate R(5);
+    ros::Rate R(30);
 	odom_init();
    	while(nh_.ok())
     {

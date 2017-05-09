@@ -16,7 +16,7 @@ sdFilter::sdFilter(): nh("~")
 
 void sdFilter::spin()
 {
-    ros::Rate rate(5);
+    ros::Rate rate(30);
     while( nh.ok() )
     {
 	ros::spinOnce();

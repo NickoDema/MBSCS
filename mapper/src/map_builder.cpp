@@ -11,19 +11,19 @@
 Mapper::Map_builder::Map_builder(double x, double y)
 {
 	add(0,0);
-	std::cout << "add 0 0" << std::endl;	//--
+	//std::cout << "add 0 0" << std::endl;	//--
 	add(x,y);
-	std::cout << "add " << x << " " << y << std::endl;	//--
+	//std::cout << "add " << x << " " << y << std::endl;	//--
 }
 
 void Mapper::Map_builder::div_by_two()
 {
 	max_dist = get_dist(Head, Tail);
-	std::cout << "get first dist " << max_dist << std::endl;	//--
+	//std::cout << "get first dist " << max_dist << std::endl;	//--
 	while (max_dist > CELL )
 	{
 		Point *temp = Head;
-		std::cout << "set temp = Head" << temp << std::endl;	//--
+		//std::cout << "set temp = Head" << temp << std::endl;	//--
 		int i =0;
 		while (temp->Next != NULL)
 		{
@@ -47,7 +47,7 @@ void Mapper::Map_builder::div_by_two()
 void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t map_[CELL_N][CELL_N])
 {
 	Point *temp = Head;
-	std::cout << "in to_map" << std::endl;	//--
+	//std::cout << "in to_map" << std::endl;	//--
 	while (temp != NULL)
 	{
 		double dist;
@@ -73,7 +73,7 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 		else if (dist < 0.57) map_[(int)yR][(int)xR] = 100;
 
 		temp = temp->Next;
-		std::cout << " +";	//--
+		//std::cout << " +";	//--
 	}
 }
 
