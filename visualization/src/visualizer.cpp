@@ -32,7 +32,7 @@ bool Visualizer::set_marker (visualization_msgs::Marker &marker, m_type type)
 		marker.color.r = 0.0f;
 		marker.color.g = 0.5f;
 		marker.color.b = 0.5f;
-		marker.color.a = 1.0;
+		marker.color.a = 0.7;
 
 		marker.lifetime = ros::Duration();
 	}
@@ -43,7 +43,7 @@ bool Visualizer::set_marker (visualization_msgs::Marker &marker, m_type type)
 void Visualizer::spin()
 {
     int i = 0;
-    ros::Rate R(2);
+    ros::Rate R(20);
 	while (marker_pub.getNumSubscribers() < 1 && nh_.ok()) 
 	    {
 	        ROS_WARN_ONCE("Please create a subscriber to the marker");
@@ -54,17 +54,35 @@ void Visualizer::spin()
     {
 		visualization_msgs::Marker contour;
 		set_marker(contour, line_s);
-		pnt.x = 0.185;
-		pnt.y = 0.185;
-		pnt.z = 0;
+		pnt.x = X_SIZE;
+		pnt.y = Y_SIZE;
+		pnt.z = 0.01;
 		contour.points.push_back(pnt);
-		pnt.x = pnt.x - 0.37;
+		pnt.x = pnt.x - X_SIZE-Y_SIZE;
 		contour.points.push_back(pnt);
-		pnt.y = pnt.y - 0.37;
+		pnt.y = pnt.y - Y_SIZE*2;
 		contour.points.push_back(pnt);
-		pnt.x = pnt.x + 0.37;
+		pnt.x = pnt.x + Y_SIZE + X_SIZE;
 		contour.points.push_back(pnt);
-		pnt.y = pnt.y + 0.37;
+		pnt.y = pnt.y + Y_SIZE*2;
+		contour.points.push_back(pnt);
+		marker_pub.publish(contour);
+		ros::spinOnce();
+
+		contour.points.clear();
+		//set_marker(contour, line_s);
+		contour.id = 1;
+		pnt.x = X_SIZE+BORD;
+		pnt.y = Y_SIZE+BORD;
+		pnt.z = 0.01;
+		contour.points.push_back(pnt);
+		pnt.x = pnt.x - X_SIZE - Y_SIZE - BORD_2;
+		contour.points.push_back(pnt);
+		pnt.y = pnt.y - Y_SIZE*2 - BORD_2;
+		contour.points.push_back(pnt);
+		pnt.x = pnt.x + Y_SIZE + X_SIZE + BORD_2;
+		contour.points.push_back(pnt);
+		pnt.y = pnt.y + Y_SIZE*2 + BORD_2;
 		contour.points.push_back(pnt);
 		marker_pub.publish(contour);
 		ros::spinOnce();

@@ -46,6 +46,7 @@ void sdFilter::filter_cb( const sensor_msgs::PointCloudConstPtr& msg )
 		{	
 			points[i].x = msg->points[i].x;
 			points[i].y = msg->points[i].y;
+			points[i].z = msg->points[i].z;
 			msg_fltred.points.push_back(points[i]); 
 		}
 
@@ -60,6 +61,7 @@ void sdFilter::filter_cb( const sensor_msgs::PointCloudConstPtr& msg )
 	{	
 		points[i].x += alpha*(msg->points[i].x - points[i].x);
 		points[i].y += alpha*(msg->points[i].y - points[i].y);
+		points[i].z = msg->points[i].z;
 		msg_fltred.points.push_back(points[i]); 
 	}
 

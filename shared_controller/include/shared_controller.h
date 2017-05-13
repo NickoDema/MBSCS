@@ -1,13 +1,13 @@
-/* mapper.h
+/* shared_controller.h
  *
- *  Created on: 19.04.2017
+ *  Created on: 09.05.2017
  *       Email: Nicko_Dema@protonmail.com
  *              ITMO University
  *              Department of Computer Science and Control Systems
  */
 
-#ifndef MAPPER_
-#define MAPPER_
+#ifndef SHARED_CONTROLLER_
+#define SHARED_CONTROLLER_
 
 #include <ros/ros.h>
 #include <tf/tf.h>
@@ -17,34 +17,53 @@
 #include <nav_msgs/Odometry.h>
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
+#include <visualization_msgs/Marker.h>
 
 #include <cmath>
 
-//map resolution constants
-#define CELL 0.02       //Cell boundary size
+#define MAX_VEL_LIN 0.2
+#define MAX_VEL_ANG 0.5
+#define MIN_VEL_ANG 0.02 //just for algorithm
+#define MIN_VEL_LIN 0.02
+
+#define X_SIZE 0.27     //0.22
+#define Y_SIZE 0.192    //0.185 
+#define BORD 0.2
 #define CELL_H 0.01
-#define CELL_N 67       //Maps width and height
-#define R_POSE 33       //Robot pose on map_
+#define PI_SH 3.142
 
-
-class Mapper
+class Controller
 {
     public:
-        Mapper(std::string);
-        ~Mapper();
+        Controller(std::string);
+        ~Controller();
         void spin();
     protected:
         ros::NodeHandle nh_;
-        ros::Publisher map_pub;
-        ros::Subscriber odom_sub;
+        //ros::Publisher cmd_vel_pub;
+        //ros::Publisher map_pub;
+        ros::Subscriber cmd_vel_sub;
+        //ros::Subscriber map_sub;
+        ros::Publisher marker_pub;
 
         geometry_msgs::Pose last_pose;      //??? static
+        geometry_msgs::Point pnt;
 
-        void odom_cb(const nav_msgs::Odometry&);
-        void odom_init();
+        void cmd_vel_cb(const geometry_msgs::Twist &);
+        //void map_cb(const nav_msgs::OccupancyGrid &);
 
+        struct Frame {
+            float x;
+            float y;
+            //Frame(float par_x, float par_y) : x(par_x), y(par_y) {}
+        };
+
+        //граница робота с учетом безопасной зоны в 5 см.
+        Frame base[8];  //clock-wise
+
+        bool set_marker (visualization_msgs::Marker &);
         //int8_t map[CELL_N][CELL_N];     //MAP
-        class Map_keeper 
+/*        class Map_keeper 
         {
             public:
             double x_error;
@@ -70,9 +89,9 @@ class Mapper
             void div_by_two();
             void to_map(double,double,double,int8_t [CELL_N][CELL_N]);
             double get_dist(Point *, Point *);
-        };
+        };*/
 
 
 };
 
-#endif  /*MAPPER_*/
+#endif  /*SHARED_CONTROLLER_*/

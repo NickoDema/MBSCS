@@ -22,7 +22,6 @@ Mapper::Map_keeper::Map_keeper(int size)
 
 void Mapper::Map_keeper::move (int cells, char dir)
 {
-	std::cout << dir << " " << cells << " dir and cells in move function" << std::endl;	//--
 	if (cells > CELL_N) cells = CELL_N;
 	if (cells <= 0) return;
 		if (dir == 'f')						//forward
@@ -32,7 +31,6 @@ void Mapper::Map_keeper::move (int cells, char dir)
 					map_[i][j] = map_[i][j+cells];
 				}
 			}
-			//trouble обнуление не стой стороны
 			for(int j = CELL_N - 1; j >= CELL_N - cells; j--) {
 				for(int i = 0; i < CELL_N; i++) {
 					map_[i][j] = -1;
@@ -60,7 +58,7 @@ void Mapper::Map_keeper::move (int cells, char dir)
 				for(int j = 0; j < CELL_N; j++) {
 					map_[i][j] = map_[i+cells][j];
 				}
-			}//trouble
+			}
 			for(int i = CELL_N - 1; i >= CELL_N - cells; i--) {
 				for(int j = 0; j < CELL_N - 1; j++) {
 					map_[i][j] = -1;
@@ -73,7 +71,7 @@ void Mapper::Map_keeper::move (int cells, char dir)
 				for(int j = 0; j < CELL_N; j++) {
 					map_[i][j] = map_[i-cells][j];
 				}
-			}//trouble
+			}
 			for(int i = 0; i < cells; i++) {
 				for(int j = 0; j < CELL_N - 1; j++) {
 					map_[i][j] = -1;

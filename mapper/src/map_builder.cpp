@@ -11,19 +11,15 @@
 Mapper::Map_builder::Map_builder(double x, double y)
 {
 	add(0,0);
-	//std::cout << "add 0 0" << std::endl;	//--
 	add(x,y);
-	//std::cout << "add " << x << " " << y << std::endl;	//--
 }
 
 void Mapper::Map_builder::div_by_two()
 {
 	max_dist = get_dist(Head, Tail);
-	//std::cout << "get first dist " << max_dist << std::endl;	//--
 	while (max_dist > CELL )
 	{
 		Point *temp = Head;
-		//std::cout << "set temp = Head" << temp << std::endl;	//--
 		int i =0;
 		while (temp->Next != NULL)
 		{
@@ -36,18 +32,16 @@ void Mapper::Map_builder::div_by_two()
 			
 			temp = new_point->Next;
 			temp->Prev = new_point;
-			std::cout << i << std::endl;	//--
 			i++;
 		}
-		max_dist = get_dist(temp, temp->Prev);
-		std::cout << std::endl << max_dist << std::endl;	//--	
+		max_dist = get_dist(temp, temp->Prev);	
 	}
 }
 
 void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t map_[CELL_N][CELL_N])
 {
+	static int8_t i = -127;
 	Point *temp = Head;
-	//std::cout << "in to_map" << std::endl;	//--
 	while (temp != NULL)
 	{
 		double dist;
@@ -57,8 +51,6 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 
 		double xR = temp->x*cos(yaw) - temp->y*sin(yaw);
 		double yR = temp->y*cos(yaw) + temp->x*sin(yaw);
-
-		//std::cout << xR << " " << yR << " point0 after rotate" << std::endl;	//------
 
 		if (xR > -0.02 && xR < 0.02) xR = R_POSE;
 		else xR = R_POSE+(xR+CELL_H)/CELL;
@@ -73,7 +65,6 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 		else if (dist < 0.57) map_[(int)yR][(int)xR] = 100;
 
 		temp = temp->Next;
-		//std::cout << " +";	//--
 	}
 }
 

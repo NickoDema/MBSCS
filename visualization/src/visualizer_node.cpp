@@ -1,4 +1,4 @@
-/* main.cpp
+/* vizualizer_node.cpp
  *
  *  Created on: 16.04.2017
  *       Email: Nicko_Dema@protonmail.com
