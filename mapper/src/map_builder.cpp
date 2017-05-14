@@ -52,10 +52,10 @@ void Mapper::Map_builder::to_map(double yaw, double x_err, double y_err, int8_t 
 		double xR = temp->x*cos(yaw) - temp->y*sin(yaw);
 		double yR = temp->y*cos(yaw) + temp->x*sin(yaw);
 
-		if (xR > -0.02 && xR < 0.02) xR = R_POSE;
-		else xR = R_POSE+(xR+CELL_H)/CELL;
-		if (yR > -0.02 && yR < 0.02) yR = R_POSE;
-		else yR = R_POSE+(yR+CELL_H)/CELL;
+		if (xR > -CELL_H && xR < CELL_H) xR = R_POSE;
+		else xR = R_POSE+xR/CELL;	//xR+CELL_H????
+		if (yR > -CELL_H && yR < CELL_H) yR = R_POSE;
+		else yR = R_POSE+yR/CELL;
 
 		if (xR < 0) xR = 0;
 		if (yR < 0) yR = 0;

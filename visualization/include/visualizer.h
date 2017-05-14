@@ -17,8 +17,8 @@
 
 #include <cmath>
 
-#define X_SIZE 0.22
-#define Y_SIZE 0.185
+#define X_SIZE 0.27
+#define Y_SIZE 0.22
 #define BORD 0.05
 #define BORD_2 0.1
 

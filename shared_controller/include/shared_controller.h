@@ -26,10 +26,17 @@
 #define MIN_VEL_ANG 0.02 //just for algorithm
 #define MIN_VEL_LIN 0.02
 
+//for obstacle detector
+#define MIN_X_RNG 0.25  //as BORD
+#define MIN_Z_ANG 0.8
+
 #define X_SIZE 0.27     //0.22
-#define Y_SIZE 0.192    //0.185 
-#define BORD 0.2
+#define Y_SIZE 0.22    //0.185 
+#define BORD 0.25
+#define CELL 0.02
 #define CELL_H 0.01
+#define R_POSE 33
+#define CELL_N 67
 #define PI_SH 3.142
 
 class Controller
@@ -40,14 +47,11 @@ class Controller
         void spin();
     protected:
         ros::NodeHandle nh_;
-        //ros::Publisher cmd_vel_pub;
-        //ros::Publisher map_pub;
+        ros::Publisher cmd_vel_pub;
+        ros::Publisher map_pub;
         ros::Subscriber cmd_vel_sub;
         //ros::Subscriber map_sub;
         ros::Publisher marker_pub;
-
-        geometry_msgs::Pose last_pose;      //??? static
-        geometry_msgs::Point pnt;
 
         void cmd_vel_cb(const geometry_msgs::Twist &);
         //void map_cb(const nav_msgs::OccupancyGrid &);
