@@ -171,7 +171,7 @@ void Mapper::odom_cb(const nav_msgs::Odometry& odom_msg)
 
 void Mapper::spin()
 {
-    ros::Rate R(40);
+    ros::Rate R(80);
 	odom_init();
    	while(nh_.ok())
     {

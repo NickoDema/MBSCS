@@ -28,10 +28,10 @@
 
 //for obstacle detector
 #define MIN_X_RNG 0.25  //as BORD
-#define MIN_Z_ANG 0.8
+#define MIN_Z_RNG 0.25
 
-#define X_SIZE 0.27     //0.22
-#define Y_SIZE 0.22    //0.185 
+#define X_SIZE 0.21     //0.22
+#define Y_SIZE 0.20    //0.185 
 #define BORD 0.25
 #define CELL 0.02
 #define CELL_H 0.01

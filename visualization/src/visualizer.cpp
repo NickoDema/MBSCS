@@ -58,13 +58,13 @@ void Visualizer::spin()
 		pnt.y = Y_SIZE;
 		pnt.z = 0.01;
 		contour.points.push_back(pnt);
-		pnt.x = pnt.x - X_SIZE*2;
+		pnt.y = -Y_SIZE;
 		contour.points.push_back(pnt);
-		pnt.y = pnt.y - Y_SIZE*2;
+		pnt.x= -X_SIZE;
 		contour.points.push_back(pnt);
-		pnt.x = pnt.x  + X_SIZE*2;
+		pnt.y = Y_SIZE;
 		contour.points.push_back(pnt);
-		pnt.y = pnt.y + Y_SIZE*2;
+		pnt.x = X_SIZE;
 		contour.points.push_back(pnt);
 		marker_pub.publish(contour);
 		ros::spinOnce();
