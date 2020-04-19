@@ -6,6 +6,6 @@
 
 Модельным объектом в работе выступает robotino.
 
-[![](http://img.youtube.com/vi/-H5UipXP7JQ/0.jpg)](http://www.youtube.com/watch?v=-H5UipXP7JQ "")
+[Текст ВКР](docs/PZ-DEMA-P3435.pdf) | [Презентация](docs/DEMA-P3435-VKR-L.pdf)
 
-[Текст ВКР](https://github.com/NickoDema/MBSCS/blob/master/docs/PZ-DEMA-P3435.pdf)
+[![](http://img.youtube.com/vi/-H5UipXP7JQ/0.jpg)](http://www.youtube.com/watch?v=-H5UipXP7JQ "")
